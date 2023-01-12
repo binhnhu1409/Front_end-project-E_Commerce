@@ -1,0 +1,32 @@
+@use '../SASS/abstract/mixins';
+@use '../SASS/abstract/variables';
+
+@use '../SASS/base/typography';
+@use '../SASS/base/animation';
+
+@use '../SASS/component/header';
+
+html {
+  font-size: 16px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: variables.$color__background;
+  color: variables.$color__text;
+}
+
+a {
+  text-decoration: none;
+  color: variables.$color__text;
+}
+
+a:hover {
+  text-decoration-style: dotted variables.$color__text 1px;
+}
+
+button {
+  background-color: inherit;
+  border: none;
+}

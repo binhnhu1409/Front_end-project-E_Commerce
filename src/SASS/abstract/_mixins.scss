@@ -1,0 +1,97 @@
+// This partial can hold any block of code that is repeatable.
+@use './variables';
+
+//Mixin for screen sizes:
+@mixin xsMaxPoint {
+  @media screen and (max-width: $screen-xs) {
+    @content;
+  }
+}
+
+@mixin smMaxPoint {
+  @media screen and (max-width: $screen-sm) {
+    @content;
+  }
+}
+
+@mixin mdMaxPoint {
+  @media screen and (max-width: $screen-md) {
+    @content;
+  }
+}
+
+@mixin lgMaxPoint {
+  @media screen and (max-width: $screen-lg) {
+    @content;
+  }
+}
+
+@mixin xlMaxPoint {
+  @media screen and (max-width: $screen-xl) {
+    @content;
+  }
+}
+
+@mixin xxlMaxPoint {
+  @media screen and (max-width: $screen-xxl) {
+    @content;
+  }
+}
+
+//Mixins for font, size etc
+@mixin iconNoBorder {
+  border: none;
+  background-color: inherit;
+}
+
+@mixin btnText {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.text-menu {
+  font-family: 'Roboto', sans-serif;
+}
+
+.list-flex-non-style {
+  list-style: none;
+  display: flex;
+}
+
+.link-color {
+  text-decoration: none;
+  color: variables.$color__text;
+}
+
+//Mixin for position
+@mixin fixedTopPage {
+  position: fixed;
+  top: 0;
+  left: 0;  
+}
+
+@mixin center(){
+  margin-right:auto;
+  margin-left:auto;
+}
+
+//Mixins for buttons
+@mixin smallButtonDark {
+  color: $color-text;
+  background-color: $color-background;
+  border: none;
+  border-radius: .4rem;
+}
+
+// mixin for effect
+.dot-appear {
+  background: transparent;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  transition: all 0.3s linear;
+  position: absolute;
+}
+

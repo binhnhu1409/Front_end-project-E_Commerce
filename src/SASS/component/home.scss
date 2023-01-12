@@ -1,0 +1,30 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+.home {
+  &__container {
+    background-color: variables.$color__text;
+    color: variables.$color__background;
+    padding: 3em;
+    width: 30%;
+    position: absolute;
+    top: 25em;
+    left: 5em;
+  }
+
+  &__img {
+    object-fit: contain;
+    max-width: 100%;
+    border-radius: 3.5em;
+    padding: 3em 0;
+  }
+
+  &__slogan {
+    font-family: 'Secular One', sans-serif;
+    font-size: 55px;
+  }
+
+  &__context {
+    padding-bottom: 0.5em;
+  }
+}

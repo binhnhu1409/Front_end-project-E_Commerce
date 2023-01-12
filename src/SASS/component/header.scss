@@ -1,0 +1,53 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+@use '../base/animation';
+
+.navbar {
+  text-align: center;
+
+  &__homebutton {
+    font-family:  'Fredoka One', cursive;
+    font-size: 36px;
+    font-weight: bold;
+    position: absolute;
+    top: 30px;
+    left: 5%;
+  }
+
+  &__logo {
+    width: 1.8em
+  }
+
+  &__name {
+    padding-left: 0.5em;
+    position: relative;
+    top: -15px;
+    
+  }
+
+  &__menu {
+    list-style: none;
+    align-items: center;
+  }
+
+  &__item{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 1.8em 1.5em;
+  }
+
+  &__link:hover{
+    animation: bigger 1s; 
+  }
+
+  &__icon {
+    @include mixins.iconNoBorder;
+    color: variables.$color__text;
+    font-size: 36px;
+    position: absolute;
+    right: 5%;
+    top: 45px;
+  }
+}

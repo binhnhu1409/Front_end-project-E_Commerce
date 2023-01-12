@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lobster&family=Open+Sans:wght@300&family=Titillium+Web:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
+.text-menu {
+  font-family: "Roboto", sans-serif;
+}
+
+.list-flex-non-style {
+  list-style: none;
+  display: flex;
+}
+
+.link-color {
+  text-decoration: none;
+  color: #F6E7C6;
+}
+
+.dot-appear {
+  background: transparent;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  transition: all 0.3s linear;
+  position: absolute;
+}
+
+h2 {
+  font-family: "Secular One", sans-serif;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
+span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+
+button {
+  cursor: pointer;
+}
+
+@keyframes bigger {
+  50% {
+    font-size: 25px;
+  }
+}
+.navbar {
+  text-align: center;
+}
+.navbar__homebutton {
+  font-family: "Fredoka One", cursive;
+  font-size: 36px;
+  font-weight: bold;
+  position: absolute;
+  top: 30px;
+  left: 5%;
+}
+.navbar__logo {
+  width: 1.8em;
+}
+.navbar__name {
+  padding-left: 0.5em;
+  position: relative;
+  top: -15px;
+}
+.navbar__menu {
+  list-style: none;
+  align-items: center;
+}
+.navbar__item {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 1.8em 1.5em;
+}
+.navbar__link:hover {
+  animation: bigger 1s;
+}
+.navbar__icon {
+  border: none;
+  background-color: inherit;
+  color: #F6E7C6;
+  font-size: 36px;
+  position: absolute;
+  right: 5%;
+  top: 45px;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #003933;
+  color: #F6E7C6;
+}
+
+a {
+  text-decoration: none;
+  color: #F6E7C6;
+}
+
+a:hover {
+  text-decoration-style: dotted #F6E7C6 1px;
+}
+
+button {
+  background-color: inherit;
+  border: none;
+}
+
+/*# sourceMappingURL=style.css.map */
