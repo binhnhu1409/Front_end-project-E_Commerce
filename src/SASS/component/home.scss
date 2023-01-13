@@ -2,13 +2,14 @@
 @use '../abstract/variables';
 
 .home {
+  
   &__container {
     background-color: variables.$color__text;
     color: variables.$color__background;
     padding: 3em;
     width: 30%;
     position: absolute;
-    top: 25em;
+    top: 20em;
     left: 5em;
   }
 
@@ -16,7 +17,7 @@
     object-fit: contain;
     max-width: 100%;
     border-radius: 3.5em;
-    padding: 3em 0;
+    padding: 1em 0;
   }
 
   &__slogan {

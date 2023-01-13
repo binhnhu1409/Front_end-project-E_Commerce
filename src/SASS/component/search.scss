@@ -3,6 +3,11 @@
 
 .search{
 
+  &__container {
+    text-align: center;
+    padding-bottom: 2em;
+  }
+
   &__input{
     width: 16%;
     padding: 5px 24px 10px 5px;
