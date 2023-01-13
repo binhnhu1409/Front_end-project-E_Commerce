@@ -27,7 +27,9 @@ const Products = () => {
         {products.map(product => (
         <div className="products">
           <span className="products__category">{product.category.name}</span>
-          <img className="products__image" src={product.images[0]} alt="" />
+          <Link to={`${product.id}`}>
+            <img className="products__image" src={product.images[0]} alt="" />
+          </Link>
           <div className="products__main">
             <p className="products__title">{product.title}</p>
             <p className="products__price">${product.price}</p>

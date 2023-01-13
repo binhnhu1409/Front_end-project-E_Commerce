@@ -17,6 +17,9 @@
     height: 320px;
     object-fit: cover;
   }
+  &__image:hover{
+    transform: translateY(-4px)
+  }
 
   &__category {
     position: relative;
@@ -28,7 +31,6 @@
   &__main {
     font-weight: 1000;
     font-size: 22px;
-    
   }
 
 }
