@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import { AxiosResponse } from "axios";
 import axiosInstance from "../../common/axiosIntance";
 
@@ -35,8 +35,12 @@ const productSlice = createSlice({
   name: "productSlice",
   initialState: initialState,
   reducers: {
-    sortByName: (state) => {
-      state.sort((a,b) => a.title.localeCompare(b.title))
+    sortByName: (state, action: PayloadAction<"asc" | "desc">) => {
+      if (action.payload === "asc") {
+        state.sort((a, b) => a.title.localeCompare(b.title));
+      } else {
+        state.sort((a, b) => b.title.localeCompare(a.title));
+      }
     }
   },
   extraReducers: (build) => {

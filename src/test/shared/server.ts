@@ -15,7 +15,7 @@ const products = [
       ],
     category: {
       id: 1,
-      name: "A Clothes",
+      name: "Clothes",
       image: "https://api.lorem.space/image/fashion?w=640&h=480&r=681",
     }
     },

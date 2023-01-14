@@ -32,5 +32,22 @@
     font-weight: 1000;
     font-size: 22px;
   }
+}
 
+.sort {
+  &__container{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__Btn {
+    @extend .generalBtn;
+    @extend .generalSmBtn;
+    @extend .lightBtn;
+    border: 2px solid variables.$color__text;
+    color: variables.$color__text;
+  }
+  &__Btn:not([disabled]):hover {
+    @extend .changedBtn;
+  }
 }

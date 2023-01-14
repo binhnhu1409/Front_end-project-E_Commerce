@@ -1,27 +1,40 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHook"
 import { fetchAllProducts, sortByName } from "../redux/reducers/productReducer"
 
 import AddButton from "../components/AddButton";
 import Search from "../components/Search";
-import "../SASS/component/products.scss"
+import "../SASS/component/products.scss";
 
 const Products = () => {
   const products = useAppSelector(state => state.productReducer)
   const dispatch = useAppDispatch()
-  const sortName = () => {
-    dispatch(sortByName())
+
+  const [namesort, setNamesort] = useState("")
+
+  const sortName = (namesort : string) => {
+    setNamesort(namesort)
+    if (namesort === "nameAsc") {
+      dispatch(sortByName("asc"));
+    } else if (namesort === "nameDesc") {
+      dispatch(sortByName("desc"));
   }
+}
   useEffect(() => {
     dispatch(fetchAllProducts())
   }, [dispatch])
 
   return (
     <div>
-      <div>
-        <button onClick={sortName} className="addBtn">Sort products by name</button>
-        <Search />
+      <Search />
+      <div className="sort__container">
+        <select name="sortByName" id="sortByName" value={namesort} className="sort__Btn"
+          onChange={({ target }) => sortName(target.value)}>
+          <option value="" disabled selected>Sort Products By Name</option>
+          <option value="nameAsc">A-Z</option>
+          <option value="nameDesc">Z-A</option>
+        </select>
       </div>
       
       {!products ? (
