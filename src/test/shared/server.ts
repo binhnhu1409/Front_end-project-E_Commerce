@@ -60,7 +60,16 @@ const handler = [
   rest.post("https://api.escuelajs.co/api/v1/products/", async (req, res, ctx) => {
     const product: ProductCreatedType = await req.json();
     return res(ctx.json(product))
-  })
+  }),
+  rest.delete("https://api.escuelajs.co/api/v1/products/:id", async (req, res, ctx) => {
+    const id = req.params
+    const findProduct = products.find((product) => product.id === Number(id))
+    console.log("findPRoduct", findProduct)
+    if (findProduct) {
+      return res(ctx.json(true))
+    }
+    return res(ctx.status(404,"Not Found"))
+  }),
 ] 
 
 const server = setupServer(...handler)

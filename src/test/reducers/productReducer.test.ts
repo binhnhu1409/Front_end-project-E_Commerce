@@ -1,7 +1,7 @@
 import { AnyAction, ThunkMiddleware } from "@reduxjs/toolkit"
 import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore"
 
-import { createProduct, fetchAllProducts, sortByName, sortByPrice } from "../../redux/reducers/productReducer"
+import { createProduct, deleteProduct, fetchAllProducts, sortByName, sortByPrice } from "../../redux/reducers/productReducer"
 import { createStore, RootState } from "../../redux/store"
 import { ProductCreatedType } from "../../types/product"
 import server from "../shared/server"
@@ -64,11 +64,16 @@ describe("Test all the productReducer actions", () => {
     expect(store.getState().productReducer[1].price).toBe(50);
     expect(store.getState().productReducer[2].price).toBe(500);
   });
-  test("sort by price desc", async () => {
+  test("Should sort products by price desc", async () => {
     await store.dispatch(fetchAllProducts());
     store.dispatch(sortByPrice("desc"));
     expect(store.getState().productReducer[0].price).toBe(500);
     expect(store.getState().productReducer[1].price).toBe(50);
     expect(store.getState().productReducer[2].price).toBe(5);
+  });
+  test("Should delete a product", async () => {
+    await store.dispatch(fetchAllProducts());
+    await store.dispatch(deleteProduct(1));
+    expect(store.getState().productReducer.length).toBe(2);
   });
 })

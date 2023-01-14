@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import { AxiosResponse } from "axios";
+import { AxiosError, AxiosResponse } from "axios";
 import axiosInstance from "../../common/axiosIntance";
 
 import { ProductCreatedType, ProductType } from "../../types/product";
@@ -19,6 +19,20 @@ export const fetchAllProducts = createAsyncThunk(
   }
 )
 
+export const deleteProduct = createAsyncThunk(
+  "deleteProduct",
+  async (id: number) => {
+    try {
+      const response = await axiosInstance.delete(`products/${id}`);
+      console.log("response from delete", response)
+      const data = await response.data
+
+      return data
+    } catch (e: any) {
+      throw new Error ("Error: Couldn't detele products")
+    }
+  }
+);
 
 export const createProduct = createAsyncThunk(
   "createProduct",
@@ -81,6 +95,25 @@ const productSlice = createSlice({
     build.addCase(createProduct.rejected, (state, action) => {
       return state
     })
+
+    build.addCase(deleteProduct.fulfilled, (state, action) => {
+      console.log("deleteProduct fullfilled")
+      if (action.payload) {
+        return state.filter((item) => item.id !== action.payload)
+      } else {
+        return state
+      }
+      
+    })
+    build.addCase(deleteProduct.pending, (state, action) => {
+      console.log("deleteProduct pending")
+      return state
+    })
+    build.addCase(deleteProduct.rejected, (state, action) => {
+      console.log("deleteProduct rejected", action)
+      return state
+    })
+
   }
 })
 
