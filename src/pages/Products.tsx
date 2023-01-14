@@ -1,8 +1,7 @@
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHook"
-import { fetchAllProducts } from "../redux/reducers/productReducer"
-import { AiOutlineEdit } from "react-icons/ai";
+import { fetchAllProducts, sortByName } from "../redux/reducers/productReducer"
 
 import AddButton from "../components/AddButton";
 import Search from "../components/Search";
@@ -11,15 +10,20 @@ import "../SASS/component/products.scss"
 const Products = () => {
   const products = useAppSelector(state => state.productReducer)
   const dispatch = useAppDispatch()
-  console.log("products", products)
-
+  const sortName = () => {
+    dispatch(sortByName())
+  }
   useEffect(() => {
     dispatch(fetchAllProducts())
   }, [dispatch])
 
   return (
     <div>
-      <Search />
+      <div>
+        <button onClick={sortName} className="addBtn">Sort products by name</button>
+        <Search />
+      </div>
+      
       {!products ? (
         <h2>Loading...</h2>
       ) : (

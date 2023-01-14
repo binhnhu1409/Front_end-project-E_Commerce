@@ -1,10 +1,11 @@
 import { rest } from "msw";
 import { setupServer } from "msw/node";
+import { ProductCreatedType } from "../../types/product";
 
 const products = [
   {
     id: 1,
-    title: "Licensed Bronze Computer",
+    title: "A Computer",
     price: 50,
     description: "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
     images: [
@@ -14,13 +15,13 @@ const products = [
       ],
     category: {
       id: 1,
-      name: "Clothes",
+      name: "A Clothes",
       image: "https://api.lorem.space/image/fashion?w=640&h=480&r=681",
     }
     },
     {
       id: 2,
-      title: "Licensed Bronze Shoes",
+      title: "C Shoes",
       price: 500,
       description: "Designed to give easy fit",
       images: [
@@ -36,7 +37,7 @@ const products = [
     },
     {
       id: 3,
-      title: "Licensed Bronze Other",
+      title: "B Other",
       price: 5,
       description: "Gloves are ergonomically designed to give easy fit",
       images: [
@@ -55,6 +56,10 @@ const products = [
 const handler = [
   rest.get("https://api.escuelajs.co/api/v1/products", (req, res, ctx) => {
     return res(ctx.json(products))
+  }),
+  rest.post("https://api.escuelajs.co/api/v1/products/", async (req, res, ctx) => {
+    const product: ProductCreatedType = await req.json();
+    return res(ctx.json(product))
   })
 ] 
 

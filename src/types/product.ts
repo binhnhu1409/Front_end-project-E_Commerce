@@ -9,3 +9,10 @@ export interface ProductType {
   images: string[]
 }
 
+export interface ProductCreatedType {
+  title: string,
+  price: number,
+  description: string,
+  categoryId: number,
+  images: string[]
+}
