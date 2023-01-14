@@ -1,0 +1,79 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+.grid {
+  margin: 1em 4em;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(320px, 1fr)
+  );
+}
+
+.products {
+  &__image{
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+  }
+  &__image:hover{
+    transform: translateY(-4px)
+  }
+  &__category {
+    position: relative;
+    background-color: variables.$color__grey--dim;
+    padding: 0 3em;
+    top: 15em;
+  }
+  &__main {
+    font-weight: 1000;
+    font-size: 22px;
+  }
+}
+
+.sort {
+  &__container{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  &__Btn {
+    @extend .generalBtn;
+    @extend .generalSmBtn;
+    @extend .lightBtn;
+    border: 2px solid variables.$color__text;
+    color: variables.$color__text;
+  }
+  &__Btn:not([disabled]):hover {
+    @extend .changedBtn;
+  }
+}
+
+.search{
+  &__container {
+    text-align: center;
+    padding-bottom: 2em;
+  }
+  &__input{
+    width: 16%;
+    padding: 5px 24px 10px 5px;
+    background-color: transparent;
+    font-size: 16px;
+    color: variables.$color__text;
+    border: 1px solid transparent;
+    border-bottom: 1px solid variables.$color__light;
+    cursor: text;
+    font-family: 'Roboto', sans-serif;
+  }
+  &__input:hover,
+  &__input:focus{
+    outline: 0;
+    border-bottom: 1px solid variables.$color__text;
+  }
+
+  &__icon{
+    font-size: 18px;
+    position: relative;
+    margin-left: -1em;
+  }
+}

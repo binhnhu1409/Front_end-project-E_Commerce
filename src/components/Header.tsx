@@ -1,7 +1,6 @@
 import {Link} from "react-router-dom"
 import { BsCart } from 'react-icons/bs';
 
-import Search from "./Search";
 import '../../src/SASS/component/header.scss'
 
 
@@ -18,6 +17,9 @@ const Header = () => {
         {/* menu item in the middle */}
         <ul className="navbar__menu">
           <li className="navbar__item">
+            <Link className="navbar__link" to="/">Home</Link>
+          </li>
+          <li className="navbar__item">
             <Link className="navbar__link" to="/products">Deals</Link>
           </li>
           <li className="navbar__item">
@@ -25,9 +27,6 @@ const Header = () => {
           </li>
           <li className="navbar__item">
             <Link className="navbar__link" to="/login">Account</Link>
-          </li>
-          <li>
-            <Search />
           </li>
         </ul>
         {/*cart on the right */}

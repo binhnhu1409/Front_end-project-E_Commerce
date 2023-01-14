@@ -1,0 +1,19 @@
+@use "../abstract/mixins";
+@use "../abstract/variables";
+
+.product{
+  display: grid; 
+  grid-template-columns: 1fr 2fr; 
+  grid-gap: 5em;  
+  margin: 3em 6em;
+
+  &__item p {
+    font-size: 18px;
+  }
+}
+
+h2 {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+}

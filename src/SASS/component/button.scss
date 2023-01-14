@@ -2,19 +2,23 @@
 @use '../abstract/variables';
 
 .normalBtn {
-  background: transparent;
-  border: 1px solid variables.$color__background;
-  border-radius: 1.8em;
+  @extend .generalBtn;
+  @extend .generalMdBtn;
+  @extend .lightBtn;
+  border: 2px solid variables.$color__background;
   color: variables.$color__background;
-  text-transform: capitalize;
-  cursor: pointer;
-  font-size: 16px;
-  line-height: 2.8;
-  padding: 0 2em;
-  text-align: center;
-  transition: background-color .2s ease-in-out;
 }
 
-.normalBtn:not([disabled]):hover {
-  background-color: variables.$color__light;
+.normalBtn:not([disabled]):hover,
+.addBtn:not([disabled]):hover {
+  @extend .changedBtn;
 }
+
+.addBtn {
+  @extend .generalBtn;
+  @extend .generalMdBtn;
+  @extend .lightBtn;
+  border: 2px solid variables.$color__text;
+  color: variables.$color__text;
+}
+

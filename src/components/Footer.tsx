@@ -14,7 +14,15 @@ const Footer = () => {
           <span className="footer__dot footer__dot--active"></span>
         </li>
         <li className="footer__item">
-          <Link className="footer__link"to="/">Deals</Link>
+          <Link className="footer__link"to="/products">Deals</Link>
+          <span className="footer__dot footer__dot--hidden"></span>
+        </li>
+        <li className="footer__item">
+          <Link className="footer__link"to="/categories">Categories</Link>
+          <span className="footer__dot footer__dot--hidden"></span>
+        </li>
+        <li className="footer__item">
+          <Link className="footer__link"to="/login">Account</Link>
           <span className="footer__dot footer__dot--hidden"></span>
         </li>
       </ul>

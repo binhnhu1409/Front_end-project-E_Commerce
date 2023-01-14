@@ -22,7 +22,10 @@
     padding-left: 0.5em;
     position: relative;
     top: -15px;
-    
+  }
+
+  &__name:hover {
+    color: variables.$color__light
   }
 
   &__menu {
