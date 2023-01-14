@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lobster&family=Open+Sans:wght@300&family=Titillium+Web:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400&display=swap");
 .text-menu {
   font-family: "Roboto", sans-serif;
 }
@@ -16,6 +17,33 @@
   color: #F6E7C6;
 }
 
+.generalBtn {
+  text-transform: capitalize;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 16px;
+}
+
+.generalMdBtn {
+  line-height: 2.8;
+  padding: 0 2em;
+  border-radius: 1.8em;
+}
+
+.generalSmBtn {
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+.changedBtn {
+  background-color: #83b999;
+}
+
+.lightBtn {
+  background: transparent;
+}
+
 .dot-appear {
   background: transparent;
   width: 6px;
@@ -25,18 +53,13 @@
   position: absolute;
 }
 
-h2 {
-  font-family: "Secular One", sans-serif;
-  text-transform: uppercase;
-}
-
 p {
   font-family: "Open Sans", sans-serif;
 }
 
 span {
-  font-family: "Open Sans", sans-serif;
-  font-size: 18px;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 20px;
 }
 
 button {
@@ -66,6 +89,9 @@ button {
   padding-left: 0.5em;
   position: relative;
   top: -15px;
+}
+.navbar__name:hover {
+  color: #83b999;
 }
 .navbar__menu {
   list-style: none;

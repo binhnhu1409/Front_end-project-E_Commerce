@@ -78,11 +78,27 @@
 }
 
 //Mixins for buttons
-@mixin smallButtonDark {
-  color: $color-text;
-  background-color: $color-background;
-  border: none;
-  border-radius: .4rem;
+.generalBtn {
+  text-transform: capitalize;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color .2s ease-in-out;
+  font-size: 16px;
+}
+.generalMdBtn {
+  line-height: 2.8;
+  padding: 0 2em;
+  border-radius: 1.8em;
+}
+.generalSmBtn {
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+.changedBtn {
+  background-color: variables.$color__light;
+}
+.lightBtn {
+  background: transparent;
 }
 
 // mixin for effect
