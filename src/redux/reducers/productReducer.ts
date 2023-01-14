@@ -19,6 +19,7 @@ export const fetchAllProducts = createAsyncThunk(
   }
 )
 
+
 export const createProduct = createAsyncThunk(
   "createProduct",
   async (product: ProductCreatedType) => {
