@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHook"
-import { fetchAllProducts, sortByName } from "../redux/reducers/productReducer"
+import { fetchAllProducts, 
+  sortByName, 
+  sortByPrice } 
+  from "../redux/reducers/productReducer"
 
 import AddButton from "../components/AddButton";
 import Search from "../components/Search";
@@ -12,6 +15,7 @@ const Products = () => {
   const dispatch = useAppDispatch()
 
   const [namesort, setNamesort] = useState("")
+  const [pricesort, setPricesort] = useState("")
 
   const sortName = (namesort : string) => {
     setNamesort(namesort)
@@ -19,8 +23,16 @@ const Products = () => {
       dispatch(sortByName("asc"));
     } else if (namesort === "nameDesc") {
       dispatch(sortByName("desc"));
+    }
   }
-}
+  const sortPrice = (pricesort : string) => {
+    setPricesort(pricesort)
+    if (pricesort === "priceAsc") {
+      dispatch(sortByPrice("asc"));
+    } else if (pricesort === "priceDesc") {
+      dispatch(sortByPrice("desc"));
+    }
+  }
   useEffect(() => {
     dispatch(fetchAllProducts())
   }, [dispatch])
@@ -34,6 +46,12 @@ const Products = () => {
           <option value="" disabled selected>Sort Products By Name</option>
           <option value="nameAsc">A-Z</option>
           <option value="nameDesc">Z-A</option>
+        </select>
+        <select name="sortByPrice" id="sortByPrice" value={pricesort} className="sort__Btn"
+          onChange={({ target }) => sortPrice(target.value)}>
+          <option value="" disabled selected>Sort Products By Price</option>
+          <option value="priceAsc">Lowest price first</option>
+          <option value="priceDesc">Highest price first</option>
         </select>
       </div>
       
