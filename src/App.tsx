@@ -24,6 +24,12 @@ const App = () => {
         {
           path: "products",
           element: <Products />,
+          children: [
+            {
+              path: "?categoryId=:id",
+              element: <Products />,
+            },
+          ]
         },
         {
           path: "products/:id",
@@ -32,7 +38,6 @@ const App = () => {
         {
           path: "categories",
           element: <Categories />
-
         },
         {
           path: "cart",

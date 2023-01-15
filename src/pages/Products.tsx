@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link} from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHook"
 import {FaSearch} from 'react-icons/fa'
 
@@ -75,7 +75,7 @@ const Products = () => {
       ) : (
       <div className="grid">
         {products.map(product => (
-        <div className="products">
+        <div className="products" key={product.id}>
           <span className="products__category">{product.category.name}</span>
           <Link to={`${product.id}`}>
             <img className="products__image" src={product.images[0]} alt="" />

@@ -18,39 +18,39 @@ const products = [
       name: "Clothes",
       image: "https://api.lorem.space/image/fashion?w=640&h=480&r=681",
     }
-    },
-    {
+  },
+  {
+    id: 2,
+    title: "C Shoes",
+    price: 500,
+    description: "Designed to give easy fit",
+    images: [
+      "https://api.lorem.space/image/fashion?w=640&h=480&r=6237",
+      "https://api.lorem.space/image/fashion?w=640&h=480&r=4729",
+      "https://api.lorem.space/image/fashion?w=640&h=480&r=4151"
+      ],
+    category: {
       id: 2,
-      title: "C Shoes",
-      price: 500,
-      description: "Designed to give easy fit",
-      images: [
-        "https://api.lorem.space/image/fashion?w=640&h=480&r=6237",
-        "https://api.lorem.space/image/fashion?w=640&h=480&r=4729",
-        "https://api.lorem.space/image/fashion?w=640&h=480&r=4151"
-        ],
-      category: {
-        id: 2,
-        name: "Shoes",
-        image: "https://api.lorem.space/image/fashion?w=640&h=480&r=681",
-      }
-    },
-    {
-      id: 3,
-      title: "B Other",
-      price: 5,
-      description: "Gloves are ergonomically designed to give easy fit",
-      images: [
-        "https://api.lorem.space/image/fashion?w=640&h=480&r=6237",
-        "https://api.lorem.space/image/fashion?w=640&h=480&r=4729",
-        "https://api.lorem.space/image/fashion?w=640&h=480&r=4151"
-        ],
-      category: {
-        id: 1,
-        name: "Clothes",
-        image: "https://api.lorem.space/image/fashion?w=640&h=480&r=681",
-      }
-      },
+      name: "Shoes",
+      image: "https://api.lorem.space/image/fashion?w=640&h=480&r=681",
+    }
+  },
+  {
+    id: 3,
+    title: "B Other",
+    price: 5,
+    description: "Gloves are ergonomically designed to give easy fit",
+    images: [
+      "https://api.lorem.space/image/fashion?w=640&h=480&r=6237",
+      "https://api.lorem.space/image/fashion?w=640&h=480&r=4729",
+      "https://api.lorem.space/image/fashion?w=640&h=480&r=4151"
+      ],
+    category: {
+      id: 1,
+      name: "Clothes",
+      image: "https://api.lorem.space/image/fashion?w=640&h=480&r=681",
+    }
+  },
 ]
 
 const handler = [
@@ -72,5 +72,5 @@ const handler = [
   }),
 ] 
 
-const server = setupServer(...handler)
-export default server
+const productServer = setupServer(...handler)
+export default productServer

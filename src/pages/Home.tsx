@@ -1,5 +1,6 @@
 import '../SASS/component/home.scss'
 import ShopButton from '../components/ShopButton'
+import Categories from './Categories'
 
 const Home = () => {
   return (
@@ -12,7 +13,8 @@ const Home = () => {
         </div>
         <img className="home__img" src={require("../assets/img/home-img.jpg")} alt="" />
       </div>
-        
+      <h3 className="categories__slogan">Shop Our Categories</h3>
+      <Categories />
     </div>
   )
 }
