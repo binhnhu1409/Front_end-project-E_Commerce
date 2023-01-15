@@ -1,22 +1,17 @@
-import { AnyAction, ThunkMiddleware } from "@reduxjs/toolkit"
-import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore"
-
 import { createProduct, deleteProduct, fetchAllProducts, sortByName, sortByPrice } from "../../redux/reducers/productReducer"
-import { createStore, RootState } from "../../redux/store"
+import { createStore } from "../../redux/store"
 import { ProductCreatedType } from "../../types/product"
-import server from "../shared/server"
+import { StoreType } from "../../types/store"
+import productServer from "../shared/productServer"
 
-let store: ToolkitStore<
-            RootState, 
-            AnyAction, 
-            [ThunkMiddleware<RootState, AnyAction, undefined>]>
+let store: StoreType
 
 beforeAll(() => {
-  server.listen()
+  productServer.listen()
 })
 
 afterAll(() => {
-  server.close()
+  productServer.close()
 })
 
 beforeEach(() => {
@@ -24,7 +19,7 @@ beforeEach(() => {
 })
 
 describe("Test all the productReducer actions", () => {
-  test("Return initial state", () => {
+  test("Return initial state of product", () => {
     expect(store.getState().productReducer.length).toBe(0)
   })
   test("Fetching all products", async () => {

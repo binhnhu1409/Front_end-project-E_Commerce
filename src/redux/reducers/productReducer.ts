@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import { AxiosResponse } from "axios";
-import axiosInstance from "../../common/axiosIntance";
 
+import axiosInstance from "../../common/axiosIntance";
 import { ProductCreatedType, ProductType } from "../../types/product";
 
 const initialState: ProductType[] = []
