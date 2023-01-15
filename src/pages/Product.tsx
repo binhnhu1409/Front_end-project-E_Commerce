@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHook";
 
 import { fetchAllProducts } from "../redux/reducers/productReducer";
-import "../SASS/component/product.scss";
+import "../SASS/pages/product.scss";
 
 const Product = () => {
   const products = useAppSelector((state) => state.productReducer)

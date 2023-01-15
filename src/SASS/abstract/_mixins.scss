@@ -100,6 +100,15 @@
 .lightBtn {
   background: transparent;
 }
+.userBtn {
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid variables.$color__text;
+  border-radius: 2em;
+  align-self: flex-end;
+  font-size: 20px;
+  line-height: 2.3em;
+}
 
 // mixin for effect
 .dot-appear {

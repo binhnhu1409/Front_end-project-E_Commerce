@@ -1,4 +1,4 @@
-import '../SASS/component/button.scss'
+import '../SASS/components/button.scss'
 
 const AddButton = () => {
   return (

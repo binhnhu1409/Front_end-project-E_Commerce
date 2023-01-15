@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import '../SASS/component/button.scss'
+import '../SASS/components/button.scss'
 
 const ShopButton = () => {
   return (
