@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHook"
 
 import { fetchAllCategories } from "../redux/reducers/categoryReducer"
@@ -7,7 +8,8 @@ import "../SASS/component/categories.scss"
 const Categories = () => {
   const dispatch = useAppDispatch()
   const categories = useAppSelector(state => state.categoryReducer)
-  console.log ("categories", categories)
+  const navigate = useNavigate();
+
   useEffect(() => {
     dispatch(fetchAllCategories())
   }, [dispatch])
@@ -19,9 +21,14 @@ const Categories = () => {
       ) : (
       <div className="categories">
         {categories.map(item => (
-          <div className="categories__card">
+          <div className="categories__card" key={item.id}>
             <span className="categories__name">{item.name}</span>
-            <img className="categories__image" src={item.image} alt="" />
+            <Link to="" onClick={(e) => 
+              {e.preventDefault();
+              navigate(`products/?categoryId=${item.id}`);}}>
+              <img className="categories__image" src={item.image} alt="" />
+            </Link>
+            
           </div>
         ))}
       </div>

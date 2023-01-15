@@ -46,6 +46,19 @@ export const createProduct = createAsyncThunk(
   }
 )
 
+export const fetchProductsByCategory = createAsyncThunk(
+  "fetchProductByCategory",
+  async (categoryId: number) => {
+    try {
+      const response = await axiosInstance.get(`products/?categoryId=${categoryId}`);
+      const data: ProductType[] = await response.data;
+      return data;
+    } catch (e: any) {
+      throw new Error("Error: Couldn't fetch products by categories");
+    }
+  }
+);
+
 const productSlice = createSlice({
   name: "productSlice",
   initialState: initialState,
@@ -114,6 +127,21 @@ const productSlice = createSlice({
       return state
     })
 
+    build.addCase(fetchProductsByCategory.fulfilled, (state, action) => {
+      if (action.payload && "message" in action.payload) {
+        return state
+      } else if (!action.payload) {
+        return state
+      } else {
+        return action.payload
+      }
+    })
+    build.addCase(fetchProductsByCategory.pending, (state, action) => {
+      return state
+    })
+    build.addCase(fetchProductsByCategory.rejected, (state, action) => {
+      return state
+    })
   }
 })
 

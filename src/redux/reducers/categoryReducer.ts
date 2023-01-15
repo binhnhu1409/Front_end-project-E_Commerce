@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import axiosInstance from "../../common/axiosIntance";
 import { CategoryType } from "../../types/category";
+import { ProductType } from "../../types/product";
 
 const initialState: CategoryType[] = []
 
@@ -12,7 +13,7 @@ export const fetchAllCategories = createAsyncThunk(
       const response = await axiosInstance.get("categories")
       const data: CategoryType[] = await response.data
       return data
-    } catch ( e: any ) {
+    } catch (e: any ) {
       throw new Error("Error: Couldn't fetch categories")
     }
   }

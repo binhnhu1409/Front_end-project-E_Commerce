@@ -1,4 +1,4 @@
-import { createProduct, deleteProduct, fetchAllProducts, sortByName, sortByPrice } from "../../redux/reducers/productReducer"
+import { createProduct, deleteProduct, fetchAllProducts, fetchProductsByCategory, sortByName, sortByPrice } from "../../redux/reducers/productReducer"
 import { createStore } from "../../redux/store"
 import { ProductCreatedType } from "../../types/product"
 import { StoreType } from "../../types/store"
@@ -70,5 +70,10 @@ describe("Test all the productReducer actions", () => {
     await store.dispatch(fetchAllProducts());
     await store.dispatch(deleteProduct(1));
     expect(store.getState().productReducer.length).toBe(2);
+  });
+  test("Should get product by category", async () => {
+    await store.dispatch(fetchAllProducts());
+    await store.dispatch(fetchProductsByCategory(1));
+    expect(store.getState().productReducer.length).toBe(1);
   });
 })
