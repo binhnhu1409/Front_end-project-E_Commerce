@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
 import axiosInstance from "../../common/axiosIntance";
 import { UserType } from "../../types/user";
+
 
 const initialState: UserType[] = []
 
@@ -21,7 +23,6 @@ const userSlice = createSlice ({
   name: "useSlice",
   initialState: initialState,
   reducers: {
-
   }, 
   extraReducers: (build) => {
     build.addCase(fetchAllUsers.fulfilled, (state, action) => {

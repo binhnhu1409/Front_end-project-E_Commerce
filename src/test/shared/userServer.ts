@@ -1,7 +1,7 @@
 import { rest } from "msw"
 import { setupServer } from "msw/lib/node"
 
-const users = [
+export const users = [
   {
     id: 1,
     email: "john@mail.com",
