@@ -27,8 +27,7 @@ const Categories = () => {
               {e.preventDefault();
               navigate(`products/?categoryId=${item.id}`);}}>
               <img className="categories__image" src={item.image} alt="" />
-            </Link>
-            
+            </Link>    
           </div>
         ))}
       </div>

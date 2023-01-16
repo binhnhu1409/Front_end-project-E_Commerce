@@ -33,7 +33,7 @@ export const registerUser = createAsyncThunk(
 )
 
 const userSlice = createSlice ({
-  name: "useSlice",
+  name: "userSlice",
   initialState: initialState,
   reducers: {
   }, 

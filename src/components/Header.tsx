@@ -2,9 +2,10 @@ import {Link} from "react-router-dom"
 import { BsCart } from 'react-icons/bs';
 
 import '../../src/SASS/components/header.scss'
-
+import { useAppSelector } from "../hooks/reduxHook";
 
 const Header = () => {
+  const cart = useAppSelector(state => state.cartReducer)
 
   return (
     <header>
@@ -31,9 +32,9 @@ const Header = () => {
         </ul>
         {/*cart on the right */}
         <button className="navbar__icon">
-          <BsCart />
+          <Link className="navbar__link" to="cart"><BsCart /></Link>
           <span className="navbar__cart">
-            {/* {cart.length} */}
+            {cart.length}
           </span>
         </button>
       </nav>
