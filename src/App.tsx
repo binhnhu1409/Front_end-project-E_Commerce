@@ -11,6 +11,7 @@ import Home from "./pages/Home"
 import Categories from "./pages/Categories"
 import Account from "./pages/Account"
 import Profile from "./pages/Profile"
+import NotFound from "./pages/NotFound"
 
 const App = () => {
   const router = createBrowserRouter([
@@ -66,6 +67,10 @@ const App = () => {
           path: "register",
           element: <Register />,
         },
+        {
+          path: "*",
+          element: <NotFound />
+        }
       ]
     }
   ])
