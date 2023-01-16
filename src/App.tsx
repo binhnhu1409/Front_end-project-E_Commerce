@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
+import './SASS/style.scss'
 import Root from "./pages/Root"
 import Cart from "./pages/Cart"
 import Products from "./pages/Products"
@@ -8,8 +9,9 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Home from "./pages/Home"
 import Categories from "./pages/Categories"
-
-import './SASS/style.scss'
+import Account from "./pages/Account"
+import Profile from "./pages/Profile"
+import NotFound from "./pages/NotFound"
 
 const App = () => {
   const router = createBrowserRouter([
@@ -45,13 +47,30 @@ const App = () => {
 
         },
         {
+          path: "account",
+          children: [
+            {
+              path: '',
+              element: <Account />
+            }
+          ]
+        },
+        {
           path: "login",
           element: <Login />,
+        },
+        {
+          path: "profile",
+          element: <Profile />,
         },
         {
           path: "register",
           element: <Register />,
         },
+        {
+          path: "*",
+          element: <NotFound />
+        }
       ]
     }
   ])

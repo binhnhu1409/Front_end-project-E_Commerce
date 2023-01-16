@@ -12,9 +12,9 @@
 
 .products {
   &__image{
+    @extend .fixedImg;
     width: 320px;
     height: 320px;
-    object-fit: cover;
   }
   &__image:hover{
     transform: translateY(-4px)

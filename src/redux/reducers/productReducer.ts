@@ -119,11 +119,11 @@ const productSlice = createSlice({
       
     })
     build.addCase(deleteProduct.pending, (state, action) => {
-      console.log("deleteProduct pending")
+      // console.log("deleteProduct pending")
       return state
     })
     build.addCase(deleteProduct.rejected, (state, action) => {
-      console.log("deleteProduct rejected", action)
+      // console.log("deleteProduct rejected", action)
       return state
     })
 

@@ -1,4 +1,4 @@
-import '../SASS/component/home.scss'
+import '../SASS/pages/home.scss'
 import ShopButton from '../components/ShopButton'
 import Categories from './Categories'
 

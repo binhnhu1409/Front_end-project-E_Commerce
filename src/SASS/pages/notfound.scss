@@ -1,0 +1,24 @@
+@use "../abstract/mixins";
+@use "../abstract/variables";
+
+.notfound {
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+  height: 400px;
+  width: 60%;
+  position: relative;
+  &__img {
+    width: 50%;
+  }
+  &__msg {
+    font-size: 25px;
+    position:absolute;
+    left: 50%;
+    top: 45%;
+  }
+  &__link:hover {
+    background-color: variables.$color__light;
+    border-radius: 1em;
+  }
+}
+

@@ -1,0 +1,47 @@
+@use "../abstract/mixins";
+@use "../abstract/variables";
+
+.profile {
+  background-color: variables.$color__text--dim;
+	border-radius: 5px;
+  margin: 0 auto;
+	box-shadow: 0px 10px 20px -10px variables.$color__light;
+	color: variables.$color__background;
+	padding: 1.8em;
+	position: relative;
+	width: 300px;
+	text-align: center;
+  &__role {
+    background-color: variables.$color__alertlight;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 7px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+  &__img {
+    @extend .fixedImg;
+    border: 1px solid variables.$color__background;
+    border-radius: 50%;
+    padding: 8px;
+    width: 230px;
+    height: 230px;
+  }
+  &__logout, 
+  &__edit {
+    @extend .userBtn;
+    border: 1px solid variables.$color__background;
+    background: transparent;
+  }
+  &__logout:hover,
+  &__edit:hover {
+    background: variables.$color__light;
+    color: variables.$color__background;
+  }
+  &__edit {
+    margin-top: 1em;
+  }
+}
+

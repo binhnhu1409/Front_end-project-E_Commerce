@@ -6,5 +6,5 @@ export type StoreType = (
   ToolkitStore<
     RootState, 
     AnyAction, 
-    [ThunkMiddleware<RootState, AnyAction, undefined>]>
+    [ThunkMiddleware<RootState, AnyAction, undefined>]> 
 )

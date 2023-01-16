@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHook"
 
 import { fetchAllCategories } from "../redux/reducers/categoryReducer"
-import "../SASS/component/categories.scss"
+import "../SASS/pages/categories.scss"
 
 const Categories = () => {
   const dispatch = useAppDispatch()

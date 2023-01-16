@@ -6,19 +6,16 @@
   justify-content: space-between;
   padding: 0 9em;
   margin: 5em 0 1em 0;
-
   &__list {
     @extend .text-menu;
     @extend .list-flex-non-style;
     gap: 1em;
     padding: 0;
   }
-
   &__link {
     @extend .link-color;
     font-size: 14px;
   }
-
   &__dot {
     @extend .dot-appear; 
     // for myself: inline-block makes the dot visible
@@ -30,7 +27,6 @@
   &__item:hover &__dot--hidden{
     background: variables.$color__dot--hidden;
   }
-
   p {
     text-transform: uppercase;
     color: variables.$color__copyright;

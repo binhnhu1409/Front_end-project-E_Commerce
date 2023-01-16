@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom"
 import { BsCart } from 'react-icons/bs';
 
-import '../../src/SASS/component/header.scss'
+import '../../src/SASS/components/header.scss'
 
 
 const Header = () => {
