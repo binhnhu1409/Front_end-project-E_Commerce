@@ -1,5 +1,6 @@
 import { rest } from "msw"
 import { setupServer } from "msw/lib/node"
+import { UserRegisterType } from "../../types/user"
 
 export const users = [
   {
@@ -31,6 +32,15 @@ export const users = [
 const handler = [
   rest.get("https://api.escuelajs.co/api/v1/users", (req, res, ctx) => {
     return res(ctx.json(users))
+  }),
+  rest.post("https://api.escuelajs.co/api/v1/users/", async(req, res, ctx) => {
+    const user: UserRegisterType = await req.json()
+    return res(ctx.json({
+          ...user,
+          role: "customer",
+          id: 1
+      })
+    )
   }),
 ]
 

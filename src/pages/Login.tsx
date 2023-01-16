@@ -5,7 +5,6 @@ import "../SASS/pages/loginAndRegister.scss"
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHook";
 import { useEffect, useState } from "react";
 import { userAuthenticate } from "../redux/reducers/authenticationReducer";
-import { fetchAllUsers } from "../redux/reducers/userReducer";
 
 const Login = () => {
   const authentication = useAppSelector((state) => state.authenticationReducer)

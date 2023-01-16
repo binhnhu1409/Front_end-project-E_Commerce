@@ -22,3 +22,11 @@ export interface LoginType {
 export interface ReturnedCredentials {
   access_token: string
 }
+
+export interface UserRegisterType {
+  name: string
+  email: string
+  password: string
+  avatar: string | File
+}
+
