@@ -36,5 +36,5 @@ describe("Test all the userReducer actions", () => {
     }
     await store.dispatch(registerUser(registeredData))
     expect(store.getState().userReducer.length).toBe(1)
-})
+  })
 })

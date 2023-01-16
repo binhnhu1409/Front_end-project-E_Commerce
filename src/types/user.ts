@@ -27,6 +27,6 @@ export interface UserRegisterType {
   name: string
   email: string
   password: string
-  avatar: string | File
+  avatar?: string | File 
 }
 
