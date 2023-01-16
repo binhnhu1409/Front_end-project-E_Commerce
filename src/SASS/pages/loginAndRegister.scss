@@ -73,6 +73,13 @@
     outline: none;
     border-color: variables.$color__text;
   }
+  &__icon {
+    font-size: 25px;
+    position: relative;
+    top: 1.6em;
+    left: 10em;
+    color: variables.$color__text;
+  }
 }
 
 .register {

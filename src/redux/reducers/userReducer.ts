@@ -3,7 +3,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axiosInstance from "../../common/axiosIntance";
 import { UserType } from "../../types/user";
 
-
 const initialState: UserType[] = []
 
 export const fetchAllUsers = createAsyncThunk(

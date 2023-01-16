@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Loading from "../components/Loading";
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHook";
 
 import { fetchAllProducts } from "../redux/reducers/productReducer";
@@ -16,7 +17,7 @@ const Product = () => {
   }, [dispatch]);
 
   if (!product) {
-    return <p>Loading...</p>
+    return <Loading />
   } 
 
   return (

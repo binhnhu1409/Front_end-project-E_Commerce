@@ -7,8 +7,10 @@ $screen-xl: 1024px;
 $screen-xxl: 1200px;
 
 //Colors
-$color__background: #003933;
-$color__text: #F6E7C6; 
+$color__background: rgb(0, 57, 51);
+$color__background--dim: rgb(0, 57, 51, .7);
+$color__text: rgb(246, 231, 198); 
+$color__text--dim: rgb(246, 231, 198, .8); 
 $color__light: #83b999;
 $color__grey: #999;
 $color__grey--dim: rgb(153, 153, 153, .8);

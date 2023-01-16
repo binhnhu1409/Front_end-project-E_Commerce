@@ -10,6 +10,7 @@ import Register from "./pages/Register"
 import Home from "./pages/Home"
 import Categories from "./pages/Categories"
 import Account from "./pages/Account"
+import Profile from "./pages/Profile"
 
 const App = () => {
   const router = createBrowserRouter([
@@ -56,6 +57,10 @@ const App = () => {
         {
           path: "login",
           element: <Login />,
+        },
+        {
+          path: "profile",
+          element: <Profile />,
         },
         {
           path: "register",

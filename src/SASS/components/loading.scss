@@ -1,0 +1,28 @@
+@use "../abstract/mixins";
+@use "../abstract/variables";
+@use "../base/animation";
+
+.loader {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  left:50%;
+  overflow-x:hidden;
+  padding-top: 3em;
+  position:absolute;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:50vw;
+  &:before {
+    animation: left-to-right 3s alternate infinite linear;
+    background-image: linear-gradient(to right, transparent, variables.$color__alertlight, transparent);
+    content:"";
+    height: 1em;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
