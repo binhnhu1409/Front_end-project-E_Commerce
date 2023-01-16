@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
 import { AiOutlineMail} from 'react-icons/ai';
 
-import '../../src/SASS/component/footer.scss'
+import '../../src/SASS/components/footer.scss'
 
 const Footer = () => {
   return (

@@ -8,13 +8,16 @@ import { fetchAllProducts,
   sortByPrice } 
   from "../redux/reducers/productReducer"
 import AddButton from "../components/AddButton";
-import "../SASS/component/products.scss";
+import "../SASS/pages/products.scss";
+import { fetchAllUsers } from "../redux/reducers/userReducer"
 
 const Products = () => {
   const dispatch = useAppDispatch()
   const [namesort, setNamesort] = useState("")
   const [pricesort, setPricesort] = useState("")
   const [search, setSearch] = useState("")
+  const users = useAppSelector(state => state.userReducer)
+  console.log("user", users)
 
   const products = useAppSelector(state => state.productReducer.filter(item => {
     return item.title.toLowerCase().indexOf(search.toLowerCase()) > -1
@@ -37,7 +40,8 @@ const Products = () => {
   }
 
   useEffect(() => {
-    dispatch(fetchAllProducts())
+    dispatch(fetchAllProducts());
+    dispatch(fetchAllUsers());
   }, [dispatch])
 
   return (

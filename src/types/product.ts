@@ -1,5 +1,4 @@
 import { CategoryType } from "./category"
-
 export interface ProductType {
   id: number
   title: string
@@ -8,7 +7,6 @@ export interface ProductType {
   category: CategoryType
   images: string[]
 }
-
 export interface ProductCreatedType {
   title: string,
   price: number,

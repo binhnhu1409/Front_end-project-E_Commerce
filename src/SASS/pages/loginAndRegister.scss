@@ -1,0 +1,97 @@
+@use "../abstract/mixins";
+@use "../abstract/variables";
+
+::-webkit-input-placeholder {
+  color: variables.$color__white--dim
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  &__window {
+    z-index: 100;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 360px;
+  }
+  &__form {
+    padding: 0 1.6em;
+    z-index: 5;
+  }
+  &__title{
+    margin-top: 1.8em;
+    text-align: center;
+    font-size: 38px;
+    letter-spacing: 0.05rem;
+  }
+  &__subtitle {
+    padding-top: 0.3em;
+    text-align: center;
+    letter-spacing: 0.02rem;
+  }
+  &__Btn {
+    @extend .userBtn;
+    color: variables.$color__text;
+  }
+  &__Btn:hover {
+    background: variables.$color__light;
+    color: variables.$color__background;
+  }
+}
+
+.register {
+  height: 80px;
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 0.01rem;
+  &__highlight {
+    cursor: pointer;
+  }
+  &__highlight:hover {
+    color: #fff;
+  }
+}
+
+.input {
+  margin-top: 3em;
+  &__line {
+    background: none;
+    margin-bottom: 0.8em;
+    line-height: 2.4em;
+    color: variables.$color__text;
+    font-size: 18px;
+    letter-spacing: 0.02rem;
+    border: none;
+    border-bottom: 1px solid variables.$color__white--dim;
+    width: 100%;
+  }
+  &__line:focus {
+    outline: none;
+    border-color: variables.$color__text;
+  }
+  &__icon {
+    font-size: 25px;
+    position: relative;
+    top: 1.6em;
+    left: 10em;
+    color: variables.$color__text;
+  }
+}
+
+.register {
+  &__Btn{
+    @extend .userBtn;
+    color: variables.$color__text;
+    margin-top: 3em;
+  }
+  &__Btn:hover {
+    background: variables.$color__light;
+    color: variables.$color__background;
+  }
+}
+
+
