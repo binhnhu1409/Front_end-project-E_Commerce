@@ -12,10 +12,10 @@ const Login = () => {
   const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false)
-  const enableShowPassword = () => {
-    setShowPassword(!showPassword)
-  }
+  // const [showPassword, setShowPassword] = useState(false)
+  // const enableShowPassword = () => {
+  //   setShowPassword(!showPassword)
+  // }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

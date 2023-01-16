@@ -7,18 +7,16 @@ import { fetchAllProducts,
   sortByName, 
   sortByPrice } 
   from "../redux/reducers/productReducer"
-import AddButton from "../components/AddButton";
 import "../SASS/pages/products.scss";
 import { fetchAllUsers } from "../redux/reducers/userReducer"
+import { ProductType } from "../types/product"
+import { addToCart } from "../redux/reducers/cartReducer"
 
 const Products = () => {
   const dispatch = useAppDispatch()
   const [namesort, setNamesort] = useState("")
   const [pricesort, setPricesort] = useState("")
   const [search, setSearch] = useState("")
-  const users = useAppSelector(state => state.userReducer)
-  console.log("user", users)
-
   const products = useAppSelector(state => state.productReducer.filter(item => {
     return item.title.toLowerCase().indexOf(search.toLowerCase()) > -1
   }))
@@ -38,6 +36,14 @@ const Products = () => {
       dispatch(sortByPrice("desc"));
     }
   }
+  const handleAddtoCart = (product: ProductType) => {
+    dispatch(addToCart({
+        product: product,
+        amount: 1,
+        totalPrice: product.price,
+      })
+    );
+  };
 
   useEffect(() => {
     dispatch(fetchAllProducts());
@@ -89,7 +95,7 @@ const Products = () => {
             <p className="products__price">${product.price}</p>
           </div>
           <p className="products__description">{product.description.substring(0, 80)}...</p>
-          <AddButton />
+          <button className="addBtn" onClick={() => handleAddtoCart(product)}>Add to Cart</button>
         </div>
       ))}
       </div>
