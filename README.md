@@ -17,6 +17,7 @@ This project focuses on demonstrating my front-end tech stacks by creating an e-
 - Click on any product will take your to product detail page.
 - In Products page displaying the list of clickable products on clicked take you to product detail page.
 - Adding product to cart
+- Building error page
 
 ### Other tasks have been done
 - Unit testing for reducers
@@ -119,6 +120,17 @@ This project focuses on demonstrating my front-end tech stacks by creating an e-
         store.ts
         user.ts
 ```
+## Screenshots
+Home page
+![Home Page](https://github.com/binhnhu1409/Front_end-project-E_Commerce/blob/main/src/assets/img/home.JPG)
+Product page
+![Product page](https://github.com/binhnhu1409/Front_end-project-E_Commerce/blob/main/src/assets/img/product.JPG)
+Category page
+![Category page](https://github.com/binhnhu1409/Front_end-project-E_Commerce/blob/main/src/assets/img/Category.JPG)
+Register page
+![Register](https://github.com/binhnhu1409/Front_end-project-E_Commerce/blob/main/src/assets/img/register.JPG)
+Error page
+![Error](https://github.com/binhnhu1409/Front_end-project-E_Commerce/blob/main/src/assets/img/errorPage.JPG)
 
 ## Instruction to start the project
 
